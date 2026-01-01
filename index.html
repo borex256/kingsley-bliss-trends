@@ -3,204 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KINGSLEY & BLISS TRENDS | Official Site</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>KINGSLEY & BLISS TRENDS | Luxury Urban Fashion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #D4AF37;
-            --black: #0a0a0a;
-            --grey: #1a1a1a;
+            --dark-gold: #aa8b2e;
+            --black: #050505;
+            --grey: #121212;
+            --glass: rgba(255, 255, 255, 0.05);
             --white: #ffffff;
-            --mtn: #ffcc00;
-            --airtel: #ff0000;
         }
 
-        body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; background: var(--black); color: var(--white); scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--black); color: var(--white); line-height: 1.6; overflow-x: hidden; }
 
         /* Navigation */
-        header {
-            background: rgba(0,0,0,0.95);
-            padding: 15px 5%;
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 20px 5%;
             display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 2px solid var(--gold);
-            position: sticky; top: 0; z-index: 1000;
+            background: rgba(0,0,0,0.8); backdrop-filter: blur(10px);
+            z-index: 1000; border-bottom: 1px solid rgba(212, 175, 55, 0.3);
         }
-        .logo { font-weight: bold; color: var(--gold); font-size: 1.4rem; letter-spacing: 1px; }
-        nav a { color: white; text-decoration: none; margin-left: 15px; font-size: 0.85rem; text-transform: uppercase; }
+        .logo { font-weight: 900; font-size: 1.4rem; color: var(--gold); letter-spacing: 2px; }
+        .nav-links a { color: var(--white); text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; }
 
         /* Hero Section */
         .hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1000&q=80');
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), var(--black)), url('store.jpg');
             background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px;
         }
+        .hero h1 { font-size: 4rem; font-weight: 900; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; line-height: 1; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; letter-spacing: 3px; }
+        .btn {
+            padding: 15px 40px; background: var(--gold); color: black; 
+            text-decoration: none; font-weight: 900; border-radius: 0;
+            transition: 0.4s; text-transform: uppercase; letter-spacing: 2px;
+        }
+        .btn:hover { background: var(--white); transform: translateY(-5px); }
 
-        /* Gallery Section */
-        .section-padding { padding: 60px 5%; }
-        .gallery-grid {
+        /* Trending Gallery */
+        section { padding: 100px 5%; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--gold); text-transform: uppercase; font-weight: 900; }
+        
+        .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
-        .gallery-item {
-            height: 300px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 8px;
-            transition: 0.3s;
-            border: 1px solid #333;
-            display: flex;
-            align-items: flex-end;
-            text-decoration: none;
+        .card {
+            background: var(--grey); border: 1px solid #222; overflow: hidden; position: relative;
         }
-        .gallery-item:hover { transform: scale(1.02); border-color: var(--gold); }
-        .gallery-label {
-            background: rgba(0,0,0,0.7);
-            width: 100%;
-            padding: 10px;
-            color: var(--gold);
-            font-weight: bold;
-            text-align: center;
+        .card img { width: 100%; height: 400px; object-fit: cover; transition: 0.5s; }
+        .card:hover img { transform: scale(1.1); filter: brightness(50%); }
+        .card-info {
+            position: absolute; bottom: 0; left: 0; padding: 20px; width: 100%;
+            background: linear-gradient(transparent, black);
         }
 
-        /* Payment Section */
-        .payment-box {
-            background: var(--grey);
-            padding: 40px;
-            border-radius: 15px;
-            text-align: center;
-            border: 1px solid var(--gold);
+        /* Modern Price List */
+        .price-container {
+            background: var(--glass); padding: 50px; border: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(5px); max-width: 900px; margin: 0 auto;
         }
-        .pay-icons { font-size: 2rem; margin: 20px 0; }
-        .pay-icons i { margin: 0 10px; }
-        .btn-pay {
-            background: var(--gold);
-            color: black;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 20px;
+        .price-item {
+            display: flex; justify-content: space-between; padding: 15px 0;
+            border-bottom: 1px solid #333; font-size: 1.1rem;
+        }
+        .price-item span:last-child { color: var(--gold); font-weight: 700; }
+
+        /* Tattoos & Photography */
+        .services-row {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;
+        }
+        .service-box {
+            padding: 40px; background: #0a0a0a; border-left: 4px solid var(--gold);
+        }
+        .service-box i { font-size: 3rem; color: var(--gold); margin-bottom: 20px; }
+
+        /* Floating WhatsApp Bot */
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px; background: #25d366;
+            width: 65px; height: 65px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 35px; color: white; box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            z-index: 1000; text-decoration: none;
         }
 
-        /* Help Bot / Floating WhatsApp */
-        .help-bot {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 1000;
-            cursor: pointer;
-            text-decoration: none;
+        footer {
+            background: #000; padding: 80px 5% 40px; text-align: center;
+            border-top: 1px solid #222;
         }
-        .bot-msg {
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            background: white;
-            color: black;
-            padding: 10px 15px;
-            border-radius: 10px;
-            font-size: 0.8rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            z-index: 1000;
+        .footer-logo { font-size: 2rem; color: var(--gold); font-weight: 900; margin-bottom: 20px; }
+        .contact-grid { margin: 30px 0; color: #888; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { padding: 15px; }
+            .nav-links { display: none; } /* Simplified for mobile */
         }
-
-        /* Table Style for Prices */
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        td { padding: 12px; border-bottom: 1px solid #333; }
-        .price-tag { color: var(--gold); font-weight: bold; text-align: right; }
-
     </style>
 </head>
 <body>
 
-<header>
+<nav>
     <div class="logo">KINGSLEY & BLISS</div>
-    <nav>
-        <a href="#gallery">Gallery</a>
+    <div class="nav-links">
+        <a href="#gallery">Collection</a>
         <a href="#prices">Prices</a>
-        <a href="#pay">Payment</a>
-    </nav>
-</header>
+        <a href="#services">Services</a>
+        <a href="https://wa.me/256757289272">Book Designer</a>
+    </div>
+</nav>
 
 <section class="hero">
-    <h1 style="color:var(--gold); font-size: 2.5rem; margin:0;">TEMPLE'S TRENDS</h1>
-    <p>Kansanga's Luxury Hub: Clothes • Tattoos • Photos</p>
-</section>
-
-<!-- Gallery Section -->
-<section class="section-padding" id="gallery">
-    <h2 style="text-align:center; color:var(--gold);">OUR WORK & SHOP</h2>
-    <div class="gallery-grid">
-        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=500');">
-            <div class="gallery-label">Premium Sneakers</div>
-        </div>
-        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1504198453319-5ce911bafcde?q=80&w=500');">
-            <div class="gallery-label">Custom Tailoring</div>
-        </div>
-        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1590212151175-e58edd96185b?q=80&w=500');">
-            <div class="gallery-label">Tattoo Studio</div>
-        </div>
-        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=500');">
-            <div class="gallery-label">Photography</div>
-        </div>
-    </div>
-</section>
-
-<!-- Prices Section -->
-<section class="section-padding" id="prices" style="background: #111;">
-    <h2 style="text-align:center; color:var(--gold);">OFFICIAL PRICE LIST</h2>
-    <table>
-        <tr><td>Designer Shirts</td><td class="price-tag">45,000 UGX</td></tr>
-        <tr><td>Fashion T-Shirts</td><td class="price-tag">45,000 UGX</td></tr>
-        <tr><td>Premium Jeans</td><td class="price-tag">60,000 - 80,000 UGX</td></tr>
-        <tr><td>Boxers (Quality)</td><td class="price-tag">15,000 - 20,000 UGX</td></tr>
-        <tr><td>Vests (Packet)</td><td class="price-tag">20,000 UGX</td></tr>
-        <tr><td>Accessory (Chains/Grills)</td><td class="price-tag">Call for Quote</td></tr>
-    </table>
-</section>
-
-<!-- Payment Section -->
-<section class="section-padding" id="pay">
-    <div class="payment-box">
-        <h2>PAYMENT METHODS</h2>
-        <p>We accept Mobile Money (MTN & Airtel), Visa, and Mastercard.</p>
-        <div class="pay-icons">
-            <i class="fas fa-credit-card" style="color:white;"></i>
-            <i class="fas fa-mobile-alt" style="color:var(--mtn);"></i>
-            <i class="fas fa-wallet" style="color:var(--airtel);"></i>
-        </div>
-        <p>Contact <strong>+256 757 289 272</strong> to confirm payment</p>
-        <a href="https://wa.me/256757289272?text=I want to make a payment" class="btn-pay">PAY VIA MOBILE MONEY</a>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer style="padding: 40px; text-align: center; border-top: 1px solid #333;">
+    <p>KANSANGA | KAMPALA</p>
+    <h1>THE NEW STANDARD</h1>
     <p>CEO: Temple (@rapking256official)</p>
-    <p>Location: Kansanga, Kampala, Ggaba Road</p>
-    <div style="font-size: 1.5rem; margin-top: 10px;">
-        <i class="fab fa-instagram" style="margin: 0 10px;"></i>
-        <i class="fab fa-tiktok" style="margin: 0 10px;"></i>
+    <a href="https://wa.me/256757289272" class="btn">Start Shopping</a>
+</section>
+
+<section id="gallery">
+    <div class="section-header">
+        <h2>New Arrivals</h2>
+        <p>Latest Drops in Store Now</p>
     </div>
+    <div class="gallery">
+        <div class="card"><img src="hoodie1.jpg"><div class="card-info"><h3>Designer Hoodie</h3><p>50,000 UGX</p></div></div>
+        <div class="card"><img src="jeans1.jpg"><div class="card-info"><h3>Classic Denim</h3><p>60,000 - 80,000 UGX</p></div></div>
+        <div class="card"><img src="shirt1.jpg"><div class="card-info"><h3>Fendi Roma Collection</h3><p>40,000 UGX</p></div></div>
+        <div class="card"><img src="hoodie4.jpg"><div class="card-info"><h3>Streetwear Hoodie</h3><p>50,000 UGX</p></div></div>
+        <div class="card"><img src="pants1.jpg"><div class="card-info"><h3>Linen Casuals</h3><p>Call for Price</p></div></div>
+        <div class="card"><img src="shirt2.jpg"><div class="card-info"><h3>Signature Tee</h3><p>40,000 UGX</p></div></div>
+        <div class="card"><img src="hoodie2.jpg"><div class="card-info"><h3>Jil Sander Edition</h3><p>50,000 UGX</p></div></div>
+        <div class="card"><img src="jeans2.jpg"><div class="card-info"><h3>Jordan Denim</h3><p>80,000 UGX</p></div></div>
+    </div>
+</section>
+
+<section id="prices" style="background-color: #080808;">
+    <div class="section-header">
+        <h2>Rate Card</h2>
+    </div>
+    <div class="price-container">
+        <div class="price-item"><span>Full Sweater Suits</span> <span>50,000 UGX</span></div>
+        <div class="price-item"><span>Designer T-Shirts</span> <span>40,000 UGX</span></div>
+        <div class="price-item"><span>Premium Shirts</span> <span>45,000 UGX</span></div>
+        <div class="price-item"><span>Streetwear Jeans</span> <span>60,000 - 80,000 UGX</span></div>
+        <div class="price-item"><span>Boxers (Premium)</span> <span>15,000 - 20,000 UGX</span></div>
+        <div class="price-item"><span>Vests (Packet)</span> <span>20,000 UGX</span></div>
+        <div class="price-item"><span>Shoes / Sneakers</span> <span>All Brands Available</span></div>
+        <div class="price-item"><span>Grills & Accessories</span> <span>Custom Quote</span></div>
+    </div>
+</section>
+
+<section id="services">
+    <div class="services-row">
+        <div class="service-box">
+            <i class="fas fa-ink-pen"></i>
+            <h2>Tattoo Studio</h2>
+            <p>Professional body art by expert artists. Clean, safe, and modern designs for the bold.</p>
+        </div>
+        <div class="service-box">
+            <i class="fas fa-camera-retro"></i>
+            <h2>Photography</h2>
+            <p>Fashion shoots, creative portraits, and branding photography. Capture your vibe with us.</p>
+        </div>
+        <div class="service-box">
+            <i class="fas fa-gem"></i>
+            <h2>Accessories</h2>
+            <p>Luxury watches, heavy chains, custom teeth grills, and the latest hair weaves.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-logo">KINGSLEY & BLISS TRENDS</div>
+    <div class="contact-grid">
+        <p>Kansanga, Ggaba Road, Kampala, Uganda</p>
+        <p>WhatsApp: +256 757 289 272 | +256 760 371 437</p>
+        <p>Instagram: @rapking256official</p>
+    </div>
+    <p style="color:#444; font-size: 0.7rem; margin-top: 50px;">© 2025 KINGSLEY & BLISS. THE ART OF TRENDING.</p>
 </footer>
 
-<!-- Help Bot -->
-<div class="bot-msg">Need help? Chat with us!</div>
-<a href="https://wa.me/256757289272?text=Hello Kingsley & Bliss, I need help with..." class="help-bot">
+<a href="https://wa.me/256757289272" class="whatsapp-float">
     <i class="fab fa-whatsapp"></i>
 </a>
 
