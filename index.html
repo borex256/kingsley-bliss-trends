@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KINGSLEY & BLISS TRENDS | Official Site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --black: #0a0a0a;
+            --grey: #1a1a1a;
+            --white: #ffffff;
+            --mtn: #ffcc00;
+            --airtel: #ff0000;
+        }
+
+        body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; background: var(--black); color: var(--white); scroll-behavior: smooth; }
+
+        /* Navigation */
+        header {
+            background: rgba(0,0,0,0.95);
+            padding: 15px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 2px solid var(--gold);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .logo { font-weight: bold; color: var(--gold); font-size: 1.4rem; letter-spacing: 1px; }
+        nav a { color: white; text-decoration: none; margin-left: 15px; font-size: 0.85rem; text-transform: uppercase; }
+
+        /* Hero Section */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1000&q=80');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+        }
+
+        /* Gallery Section */
+        .section-padding { padding: 60px 5%; }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .gallery-item {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            transition: 0.3s;
+            border: 1px solid #333;
+            display: flex;
+            align-items: flex-end;
+            text-decoration: none;
+        }
+        .gallery-item:hover { transform: scale(1.02); border-color: var(--gold); }
+        .gallery-label {
+            background: rgba(0,0,0,0.7);
+            width: 100%;
+            padding: 10px;
+            color: var(--gold);
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Payment Section */
+        .payment-box {
+            background: var(--grey);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid var(--gold);
+        }
+        .pay-icons { font-size: 2rem; margin: 20px 0; }
+        .pay-icons i { margin: 0 10px; }
+        .btn-pay {
+            background: var(--gold);
+            color: black;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        /* Help Bot / Floating WhatsApp */
+        .help-bot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .bot-msg {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: white;
+            color: black;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        /* Table Style for Prices */
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        td { padding: 12px; border-bottom: 1px solid #333; }
+        .price-tag { color: var(--gold); font-weight: bold; text-align: right; }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">KINGSLEY & BLISS</div>
+    <nav>
+        <a href="#gallery">Gallery</a>
+        <a href="#prices">Prices</a>
+        <a href="#pay">Payment</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1 style="color:var(--gold); font-size: 2.5rem; margin:0;">TEMPLE'S TRENDS</h1>
+    <p>Kansanga's Luxury Hub: Clothes • Tattoos • Photos</p>
+</section>
+
+<!-- Gallery Section -->
+<section class="section-padding" id="gallery">
+    <h2 style="text-align:center; color:var(--gold);">OUR WORK & SHOP</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=500');">
+            <div class="gallery-label">Premium Sneakers</div>
+        </div>
+        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1504198453319-5ce911bafcde?q=80&w=500');">
+            <div class="gallery-label">Custom Tailoring</div>
+        </div>
+        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1590212151175-e58edd96185b?q=80&w=500');">
+            <div class="gallery-label">Tattoo Studio</div>
+        </div>
+        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=500');">
+            <div class="gallery-label">Photography</div>
+        </div>
+    </div>
+</section>
+
+<!-- Prices Section -->
+<section class="section-padding" id="prices" style="background: #111;">
+    <h2 style="text-align:center; color:var(--gold);">OFFICIAL PRICE LIST</h2>
+    <table>
+        <tr><td>Designer Shirts</td><td class="price-tag">45,000 UGX</td></tr>
+        <tr><td>Fashion T-Shirts</td><td class="price-tag">45,000 UGX</td></tr>
+        <tr><td>Premium Jeans</td><td class="price-tag">60,000 - 80,000 UGX</td></tr>
+        <tr><td>Boxers (Quality)</td><td class="price-tag">15,000 - 20,000 UGX</td></tr>
+        <tr><td>Vests (Packet)</td><td class="price-tag">20,000 UGX</td></tr>
+        <tr><td>Accessory (Chains/Grills)</td><td class="price-tag">Call for Quote</td></tr>
+    </table>
+</section>
+
+<!-- Payment Section -->
+<section class="section-padding" id="pay">
+    <div class="payment-box">
+        <h2>PAYMENT METHODS</h2>
+        <p>We accept Mobile Money (MTN & Airtel), Visa, and Mastercard.</p>
+        <div class="pay-icons">
+            <i class="fas fa-credit-card" style="color:white;"></i>
+            <i class="fas fa-mobile-alt" style="color:var(--mtn);"></i>
+            <i class="fas fa-wallet" style="color:var(--airtel);"></i>
+        </div>
+        <p>Contact <strong>+256 757 289 272</strong> to confirm payment</p>
+        <a href="https://wa.me/256757289272?text=I want to make a payment" class="btn-pay">PAY VIA MOBILE MONEY</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer style="padding: 40px; text-align: center; border-top: 1px solid #333;">
+    <p>CEO: Temple (@rapking256official)</p>
+    <p>Location: Kansanga, Kampala, Ggaba Road</p>
+    <div style="font-size: 1.5rem; margin-top: 10px;">
+        <i class="fab fa-instagram" style="margin: 0 10px;"></i>
+        <i class="fab fa-tiktok" style="margin: 0 10px;"></i>
+    </div>
+</footer>
+
+<!-- Help Bot -->
+<div class="bot-msg">Need help? Chat with us!</div>
+<a href="https://wa.me/256757289272?text=Hello Kingsley & Bliss, I need help with..." class="help-bot">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
